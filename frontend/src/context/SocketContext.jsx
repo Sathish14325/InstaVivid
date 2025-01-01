@@ -23,6 +23,7 @@ const SocketProvider = ({ children }) => {
         },
         transports: ["websocket"],
       });
+      console.log("Socket connected:", socket);
       setSocket(socket);
       socket.on("getOnlineUsers", (onlineUser) => {
         dispatch(setOnlineUsers(onlineUser));
@@ -30,6 +31,11 @@ const SocketProvider = ({ children }) => {
       socket.on("notification", (notification) => {
         dispatch(setLikeNotification(notification));
       });
+
+      socket.on("connect_error", (err) => {
+        console.error("Socket connection error:", err);
+      });
+
       return () => {
         socket.close();
         // dispatch(setSocket(null));
