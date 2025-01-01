@@ -33,6 +33,9 @@ import postRoute from "./routes/post.routes.js";
 import messageRoute from "./routes/message.routes.js";
 
 // ----------- Routes declaration ---------
+app.get("/", (req, res) => {
+  res.send("Home page");
+});
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/post", postRoute);
 app.use("/api/v1/message", messageRoute);

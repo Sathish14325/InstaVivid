@@ -5,7 +5,7 @@ import { server } from "./app.js";
 
 dotnev.config();
 
-console.log(dotnev.config());
+// console.log(dotnev.config());
 
 // ------------ PORT -----------
 const PORT = process.env.PORT || 8000;
