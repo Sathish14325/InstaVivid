@@ -72,7 +72,7 @@ const ChatPage = () => {
             <MdArrowBack />
           </NavLink>
           {/* {user?.username} */}
-          <span className="text-purple-700 flex items-end gap-x-2">
+          <span className="text-purple-600 flex items-end gap-x-2">
             Chat
             <IoChatboxEllipses />
           </span>

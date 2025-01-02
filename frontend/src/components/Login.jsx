@@ -79,7 +79,11 @@ const Login = () => {
             <div className="my-2">
               {/* <h1 className="text-center font-bold text-xl">Logo</h1> */}
               <div className="w-full flex justify-center cursor-pointer">
-                <img src="images/aliet1.png" alt="Aliet" className="h-10  " />
+                <img
+                  src="images/socialgram.png"
+                  alt="socialgram"
+                  className="h-10  "
+                />
               </div>
               <p className="text-sm text-center mt-2">
                 Stay connected with your friends.

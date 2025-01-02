@@ -18,33 +18,36 @@ const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       const socket = io(`${import.meta.env.VITE_APP_URI}`, {
-        query: {
-          userId: user?._id,
-        },
-        transports: ["websocket"],
+        query: { userId: user?._id },
       });
-      console.log("Socket connected:", socket);
-      setSocket(socket);
-      socket.on("getOnlineUsers", (onlineUser) => {
-        dispatch(setOnlineUsers(onlineUser));
+
+      socket.on("connect", () => {
+        console.log("Connected with socket ID:", socket.id);
+        setSocket(socket);
       });
+
+      socket.on("getOnlineUsers", (onlineUsers) => {
+        dispatch(setOnlineUsers(onlineUsers));
+      });
+
       socket.on("notification", (notification) => {
         dispatch(setLikeNotification(notification));
       });
 
-      socket.on("connect_error", (err) => {
-        console.error("Socket connection error:", err);
+      socket.on("disconnect", (reason) => {
+        console.log("Socket disconnected:", reason);
+      });
+
+      socket.on("connect_error", (error) => {
+        console.error("Socket connection error:", error);
       });
 
       return () => {
-        socket.close();
-        // dispatch(setSocket(null));
-        setSocket(null);
+        if (socket && socket.connected) {
+          socket.disconnect();
+          setSocket(null);
+        }
       };
-    } else if (socket) {
-      socket.close();
-      // dispatch(setSocket(null));
-      setSocket(null);
     }
   }, [user, dispatch]);
 

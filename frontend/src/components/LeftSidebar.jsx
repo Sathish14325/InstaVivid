@@ -44,8 +44,6 @@ import {
   setSelectedUser,
 } from "@/redux/chatSlice";
 // import { persistor } from "@/redux/store";
-import aliet1 from "@/assets/images/aliet1.png";
-import aliet2 from "@/assets/images/aliet2.png";
 import default_profile from "@/assets/images/default_profile.png";
 const token = localStorage.getItem("aliet");
 const LeftSidebar = () => {
@@ -115,8 +113,6 @@ const LeftSidebar = () => {
       setNotificationOpen(!notificationOpen);
       // dispatch(setLikeNotification([]));
       // console.log(likeNotification);
-    } else if (textType === "About") {
-      navigate("/about");
     }
   };
 
@@ -132,10 +128,6 @@ const LeftSidebar = () => {
     {
       icon: <Search />,
       text: "Search",
-    },
-    {
-      icon: <Info />,
-      text: "About",
     },
     {
       icon: <MessageCircle />,
@@ -185,7 +177,7 @@ const LeftSidebar = () => {
             to={"/"}
             className="w-full flex items-center justify-center lg:justify-start"
           >
-            <img
+            {/* <img
               src={aliet1}
               // src="images/aliet1.png"
               alt="Aliet"
@@ -196,7 +188,11 @@ const LeftSidebar = () => {
               // src="images/aliet2.png"
               alt="Aliet"
               className="h-7  my-5 inline-block lg:hidden"
-            />
+            /> */}
+            <h6 className="text-lg font-bold ml-6 mt-3 hidden lg:block text-violet-800">
+              𝓢𝓸𝓬𝓲𝓪𝓵𝓖𝓻𝓪𝓶
+            </h6>
+            <h6 className="text-lg my-5 block lg:hidden">𝓢𝓸𝓬𝓲𝓪𝓵𝓖𝓻𝓪𝓶</h6>
           </NavLink>
           <div>
             {sidebarItems.map((item, index) => {
@@ -264,47 +260,48 @@ const LeftSidebar = () => {
                         </Popover>
                       )}
                   </>
-                  {/* {item.text === "Notifications" &&
-                  likeNotification.length > 0 && (
-                    <Popover>
-                      <PopoverTrigger asChild>
-                        <Button
-                          size="icon"
-                          className={
-                            "rounded-full h-5 w-5 absolute bottom-6 left-6"
-                          }
-                        >
-                          {likeNotification.length}
-                        </Button>
-                        <PopoverContent>
-                          <div>
-                            {likeNotification.length === 0 ? (
-                              <p>No notification</p>
-                            ) : (
-                              likeNotification.map((notification) => (
-                                <div key={notification.userId}>
-                                  <Avatar>
-                                    <AvatarImage
-                                      src={
-                                        notification.userDetails?.profilePicture
-                                      }
-                                      alt="profile"
-                                    />
-                                  </Avatar>
-                                  <p className="text-sm">
-                                    <span className="font-bold">
-                                      {notification.userDetails?.username}
-                                    </span>
-                                    liked your post
-                                  </p>
-                                </div>
-                              ))
-                            )}
-                          </div>
-                        </PopoverContent>
-                      </PopoverTrigger>
-                    </Popover>
-                  )} */}
+                  {item.text === "Notifications" &&
+                    likeNotification.length > 0 && (
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            size="icon"
+                            className={
+                              "rounded-full h-5 w-5 absolute bottom-6 left-6"
+                            }
+                          >
+                            {likeNotification.length}
+                          </Button>
+                          <PopoverContent>
+                            <div>
+                              {likeNotification.length === 0 ? (
+                                <p>No notification</p>
+                              ) : (
+                                likeNotification.map((notification) => (
+                                  <div key={notification.userId}>
+                                    <Avatar>
+                                      <AvatarImage
+                                        src={
+                                          notification.userDetails
+                                            ?.profilePicture
+                                        }
+                                        alt="profile"
+                                      />
+                                    </Avatar>
+                                    <p className="text-sm">
+                                      <span className="font-bold">
+                                        {notification.userDetails?.username}
+                                      </span>
+                                      liked your post
+                                    </p>
+                                  </div>
+                                ))
+                              )}
+                            </div>
+                          </PopoverContent>
+                        </PopoverTrigger>
+                      </Popover>
+                    )}
 
                   {item.text === "Search" && (
                     <div className="drawer">

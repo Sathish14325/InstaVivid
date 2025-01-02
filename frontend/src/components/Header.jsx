@@ -120,10 +120,6 @@ const Header = () => {
       text: "Notifications",
     },
     {
-      icon: <Info />,
-      text: "About",
-    },
-    {
       icon: <LogOut />,
       text: "Logout",
     },
@@ -137,11 +133,14 @@ const Header = () => {
         <div className="flex w-full justify-between items-center">
           {/* <h1 className=" pl-3 font-bold text-xl">Logo</h1> */}
           <NavLink to={"/"} className="w-full flex items-center justify-start">
-            <img
+            {/* <img
               src="images/aliet1.png"
               alt="Aliet"
               className="h-10 ml-2 mt-3s p-2 inline-block md:hidden "
-            />
+            /> */}
+            <h6 className="text-lg font-bold my-5 text-violet-800">
+              𝓢𝓸𝓬𝓲𝓪𝓵𝓖𝓻𝓪𝓶
+            </h6>
           </NavLink>
           <div className="flex gap-x-0">
             {headerItems.map((item, index) => {

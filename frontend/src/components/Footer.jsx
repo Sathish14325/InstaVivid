@@ -17,35 +17,35 @@ const Footer = () => {
         <div className="text-center mb-2">Follow me</div>
         <div className="flex gap-x-2">
           <a
-            href="https://github.com/jabedalimollah"
+            href="https://github.com/Sathish14325/"
             target="_blank"
             className="p-2 rounded-full border border-white hover:bg-white hover:text-blue-900"
           >
             <FaGithub />
           </a>
           <a
-            href="https://www.instagram.com/jabedalimollah7/"
+            href="https://www.instagram.com/star.sathish_143/"
             target="_blank"
             className="p-2 rounded-full border border-white hover:bg-white hover:text-blue-900"
           >
             <AiFillInstagram />
           </a>
           <a
-            href="https://x.com/JabedAliMollah7"
+            href="https://x.com/starsathish143/"
             target="_blank"
             className="p-2 rounded-full border border-white hover:bg-white hover:text-blue-900"
           >
             <BsTwitterX />
           </a>
           <a
-            href="https://www.linkedin.com/in/jabedalimollah/"
+            href="https://www.linkedin.com/in/sathish0527/"
             target="_blank"
             className="p-2 rounded-full border border-white hover:bg-white hover:text-blue-900"
           >
             <FaLinkedinIn />
           </a>
           <a
-            href="https://jabedalimollah.netlify.app/"
+            href="https://starsathish.netlify.app/"
             target="_blank"
             className="p-2 rounded-full border border-white hover:bg-white hover:text-blue-900"
           >
@@ -56,7 +56,7 @@ const Footer = () => {
       {/* <hr className="bg-white h-[2%] w-full my-3" /> */}
       <div className="w-full bg-purple-200  flex justify-center py-4 border-t border-t-gray-200  pb-10 md:pb-4">
         {/* copyright©️ 2024 */}
-        <p>© {year.getFullYear()} Aliet. All Rights Reserved</p>
+        <p>© {year.getFullYear()} SocialGram. All Rights Reserved</p>
       </div>
     </footer>
   );
